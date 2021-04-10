@@ -27,7 +27,7 @@
 ## Ciatec
 
 O objetivo deste teste é desenvolver telas usando o
-protótipos. A ideia é construir uma Funcionalidade de Registro de Usuário.
+protótipos. A ideia é construir uma Funcionalidade de Registro de Usuário, utilizando o Core UI template.
 
 ## Ferramentas utilizadas
 
