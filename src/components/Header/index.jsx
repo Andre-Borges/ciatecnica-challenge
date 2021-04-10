@@ -43,7 +43,7 @@ export default function Header() {
         <CToggler inHeader className="ml-md-3 d-lg-none" onClick={toggleSidebarMobile} />
 
         <Link to="/home">
-          <h2 className="text-white font-weight-bold">Ciatécnica challenge</h2>
+          <h2 className="text-white font-weight-bold mt-1">Ciatécnica challenge</h2>
         </Link>
       </CContainer>
       <CSubheader className="mt-0 border-0 bg-purple">
