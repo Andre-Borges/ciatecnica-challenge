@@ -16,6 +16,7 @@ import api from '../../services/api';
 
 export default function Home() {
   const [users, setUsers] = useState([]);
+  const [selectFilter, setSelectFilter] = useState('');
 
   async function getUsers() {
     const response = await api.get('/users');
@@ -88,6 +89,17 @@ export default function Home() {
     }
   };
 
+  function handleOnChange(e) {
+    const { value } = e.target;
+    setSelectFilter(value);
+  }
+
+  function filterSelect(users) {
+    return selectFilter === ''
+      ? users
+      : users.filter((user) => user.status === selectFilter);
+  }
+
   return (
     <CContainer fluid className="home-container mt-4">
       <CRow className="mb-3 align-items-center">
@@ -102,12 +114,10 @@ export default function Home() {
           <CLabel htmlFor="select">Status</CLabel>
         </CCol>
         <CCol md="3" className="d-flex">
-          <CSelect custom name="status" id="status">
-            <option value="0">Please select</option>
+          <CSelect custom name="status" id="status" onChange={(e) => handleOnChange(e)}>
+            <option value="">All</option>
             <option value="Active">Active</option>
             <option value="Inactive">Inactive</option>
-            <option value="Pending">Pending</option>
-            <option value="Banned">Banned</option>
           </CSelect>
           <CImg src="/icons/filter.svg" className="ml-3" />
         </CCol>
@@ -117,7 +127,7 @@ export default function Home() {
       </CRow>
 
       <CDataTable
-        items={users}
+        items={filterSelect(users)}
         fields={fields}
         hover
         sorter
