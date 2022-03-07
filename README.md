@@ -9,20 +9,26 @@
    ```sh
    $ yarn install
    ```
+   
+2. Instale o SASS:
 
-2. Foi utilizado o json-server para simulação da API, execute com o seguinte comando (a porta está configurada na 3333):
+   ```sh
+   $ yarn add sass
+   ```
+
+3. Foi utilizado o json-server para simulação da API, execute com o seguinte comando (a porta está configurada na 3333):
 
    ```sh
    $ npx json-server server.json -p 3333
    ```
 
-3. Rode o projeto:
+4. Rode o projeto:
 
    ```sh
    $ yarn start
    ```
 
-4. Abra [http://localhost:3000](http://localhost:3000) em seu navegador.
+5. Abra [http://localhost:3000](http://localhost:3000) em seu navegador.
 
 ## Ciatec
 
